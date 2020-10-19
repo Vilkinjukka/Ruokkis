@@ -7,6 +7,9 @@
 body
 {
   font-family: Open Sans;
+  background-color: #FDB449;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
 }
 
 /* Navbar */
@@ -41,7 +44,16 @@ body
 .navbar-nav li a
 {
   color: #fff !important;
-  font-weight: 600;
+  float: right;
+  text-align: left;
+}
+
+.navbar-toggler
+{
+  outline: none !important;
+  border: 0 !important;
+  color: #FFF !important;
+  font-size: 30px;
 }
 
 @media only screen and (max-width: 400px) {
@@ -56,24 +68,70 @@ body
 }
 
 
-/* Welcome */
-.welcome-div
+/* Banner */
+#banner
 {
-  padding-top:64px;
   background-color: #FDB449;
-  height: 512px;
   color: #FFF;
+  padding: 64px 10% 64px 10%;
+  font-size: 26px;
+  font-weight: thin;
 }
 
 .huge-text
 {
-  font-family: 'Fredoka One';
-  font-size: 6vw;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 32px;
 }
 
-.thin-text
+/* Grid */
+#grid
 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 26px;
-  font-weight: thin;
+  background-color: #F2F2F2;
+  padding: 64px 5% 64px 5%;
+}
+
+.card {
+  margin: 0 auto;
+  float: none;
+  border: none;
+  border-radius: 10px
+}
+.card-title
+{
+  font-weight: 500;
+}
+
+.btn
+{
+  background-color: #66CC66;
+  border-color: #66CC66;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Fredoka One', sans-serif;
+  letter-spacing: 0.5px;
+  outline:none;
+}
+.btn:hover
+{
+    color: #fff;
+    background-color: #5EB55E;
+    border-color: #5EB55E;
+}
+.btn:active
+{
+  color: #fff;
+  background-color: #5EB55E !important;
+  border-color: #5EB55E !important;
+}
+
+
+/* Footer */
+#footer
+{
+  background-color: #FDB449;
+  color: #fff;
+  padding: 64px 10% 64px 10%;
+  font-size: 20px;
+  font-weight: 300;
 }
