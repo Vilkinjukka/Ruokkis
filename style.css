@@ -92,10 +92,13 @@ body
 }
 
 .card {
-  margin: 0 auto;
+  margin: 16px auto;
   float: none;
   border: none;
-  border-radius: 10px
+  border-radius: 10px;
+  width: auto !important;
+  min-width: 245px !important;
+  max-width: 312px !important;
 }
 .card-title
 {
