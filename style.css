@@ -4,6 +4,9 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body
 {
   font-family: Open Sans;
@@ -15,15 +18,33 @@ body
 /* Navbar */
 #nav-bar
 {
-  position: sticky
+  position: sticky;
   top: 0;
   z-index: 10;
 
 }
+
+.smart-scroll
+{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.scrolled-down
+{
+   transform:translateY(-100%); transition: all 0.2s ease-in-out !important;
+}
+.scrolled-up
+{
+   transform:translateY(0); transition: all 0.3s ease-in-out !important;
+}
 .navbar
 {
+  transition: background-color 0.1s linear;
   background-color: #FDB449;
-  padding: 24px !important;
+  padding: 10px !important;
   padding-left: 64px !important;
   padding-right: 64px !important;
 }
@@ -83,6 +104,25 @@ body
   font-family: 'Fredoka One', sans-serif;
   font-size: 32px;
 }
+.title-text
+{
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 7vw;
+}
+@media only screen and (max-width: 700px)
+{
+  .title-text
+  {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 310px)
+{
+  .title-text
+  {
+    font-size: 32px;
+  }
+}
 
 /* Grid */
 #grid
@@ -91,14 +131,46 @@ body
   padding: 64px 5% 64px 5%;
 }
 
-.card {
+.grid-container
+{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+@media only screen and (max-width: 1340px)
+{
+  .grid-container
+  {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 1000px)
+{
+  .grid-container
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 640px)
+{
+  .grid-container
+  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.card
+{
   margin: 16px auto;
   float: none;
   border: none;
   border-radius: 10px;
-  width: auto !important;
-  min-width: 245px !important;
-  max-width: 312px !important;
+  grid-row: span 1;
+  grid-column: span 1;
+  width: 100% !important;
+  min-height: 184px !important;
+  max-width: 300px !important;
 }
 .card-title
 {
@@ -137,4 +209,23 @@ body
   padding: 64px 10% 64px 10%;
   font-size: 20px;
   font-weight: 300;
+}
+
+.social-icon
+{
+  font-size:48px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.social-icon:hover
+{
+  color: #e3e3e3;
+  text-decoration: none;
+}
+
+.social-icon:active
+{
+  text-decoration: none;
+  color: #e3e3e3;
 }

@@ -14,7 +14,7 @@
 
   <body>
     <section id="nav-bar">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg navbar-light smart-scroll">
         <a class="navbar-brand" href="#"><img src="images/title.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">ETUSIVU</a>
+              <a class="nav-link" onclick="topFunction()" style="cursor: pointer">ETUSIVU</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">RESEPTIT</a>
+              <a class="nav-link" href="#grid">RESEPTIT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">MEISTÄ</a>
+              <a class="nav-link" href="#footer">MEISTÄ</a>
             </li>
           </ul>
         </div>
@@ -37,22 +37,25 @@
     </section>
 
     <section id="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <p class="huge-text text-center">RUOKKIS.FI</p>
-            <p class="thin-text text-center">Helppoja ja halpoja reseptejä opiskelijoilta opiskelijoille</p>
-          </div>
+      <div class="row">
+        <div class="col">
+          <p class="title-text text-center">RUOKKIS.FI</p>
+          <p class="thin-text text-center">Helppoja ja halpoja reseptejä opiskelijoilta opiskelijoille</p>
         </div>
       </div>
     </section>
 
     <section id="grid">
+      <div class="grid-container" id="cardholder">
+      </div>
     </section>
 
     <section id="footer">
       <p class="huge-text text-center">MEISTÄ</p>
       <p class="thin-text text-center">Tarkoituksenamme on helpottaa ruoanlaittoa ja tuoda perinteisiä arkiruokia kaikkiin koteihin. Reseptimme ovat helppoja, edullisia ja sopivat aivan kaikille, opiskelijoista lapsiperheille!</p>
+      <div class="text-center">
+        <a class="btn-floating btn-lg btn-ins text-center social-icon" type="button" href="https://www.instagram.com/ruokkis.fi" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+      </div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -60,5 +63,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0e7645e1a2.js" crossorigin="anonymous"></script>
     <script src="custom.js"></script>
+    <script src="database.js"></script>
   </body>
 </html>
