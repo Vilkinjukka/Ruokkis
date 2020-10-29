@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi" dir="ltr">
+<html lang="fi" dir="ltr" class="smooth-scroll">
   <head>
     <meta charset="utf-8">
     <title>Ruokkis</title>
@@ -8,6 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9997778515268960",
+          enable_page_level_ads: true
+        });
+      </script>
 
   </head>
 
@@ -50,11 +58,26 @@
       </div>
     </section>
 
+    <div class="popup-container hide" id="popup">
+      <div class="resepti-container">
+        <button class="close-button">
+          <i onclick="closeResepti()"class="fas fa-times"></i>
+        </button>
+        <h5 class="card-title">Kurpitsamuffinssit</h5>
+        <p class="card-text"> Mehevät kurpitsamuffinsit on kuorrutettu makealla kinuskikermalla ja ripauskella kanelia. Yhdistelmä on superherkullinen. Jos kurpitsasosetta ei ole saatavilla, kokeile muffinsseja bataatti- tai porkkanasoseesta. </p>
+      </div>
+    </div>
+
     <section id="footer">
       <p class="huge-text text-center">MEISTÄ</p>
       <p class="thin-text text-center">Tarkoituksenamme on helpottaa ruoanlaittoa ja tuoda perinteisiä arkiruokia kaikkiin koteihin. Reseptimme ovat helppoja, edullisia ja sopivat aivan kaikille, opiskelijoista lapsiperheille!</p>
       <div class="text-center">
-        <a class="btn-floating btn-lg btn-ins text-center social-icon" type="button" href="https://www.instagram.com/ruokkis.fi" target="_blank" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn-floating btn-lg btn-ins text-center social-icon" href="https://www.instagram.com/ruokkis.fi" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="col text-center">
+        <a href="#" class="link">Tietosuojaseloste</a>
       </div>
     </section>
 

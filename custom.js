@@ -1,16 +1,17 @@
 $('body').css('padding-top', $('.navbar').outerHeight() + 'px')
 
 if ($('.smart-scroll').length > 0) { // check if element exists
-    var last_scroll_top = 0;
     $(window).on('scroll', function() {
+        var val = $('#banner').offset().top+$('#banner').outerHeight() - $('.smart-scroll').outerHeight();
         scroll_top = $(this).scrollTop();
-        if(scroll_top < last_scroll_top) {
+        if(scroll_top <= val)
+        {
             $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
         }
-        else {
+        else
+        {
             $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
         }
-        last_scroll_top = scroll_top;
     });
 }
 
@@ -28,6 +29,7 @@ $(function()
   });
   dummyDiv.css("display","none");
   $("body").append(dummyDiv);
+  topFunction();
 
 });
 
@@ -43,4 +45,25 @@ function ChangeData(name,text)
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+function showResepti()
+{
+  $(".popup-container").removeClass("hide");
+  const scrollY = `-${window.scrollY}px`;
+  document.body.style.position = 'fixed';
+  document.body.style.top = scrollY;
+}
+
+function closeResepti()
+{
+  $(".popup-container").addClass("hide");
+  const scrollY = document.body.style.top;
+  console.log(scrollY)
+  document.body.style.position = '';
+  document.body.style.top = '';
+
+  $("html").removeClass("smooth-scroll")
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  $("html").addClass("smooth-scroll")
 }

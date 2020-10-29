@@ -4,15 +4,18 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 body
 {
   font-family: Open Sans;
   background-color: #FDB449;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
 }
 
 /* Navbar */
@@ -22,6 +25,11 @@ body
   top: 0;
   z-index: 10;
 
+}
+
+.smooth-scroll
+{
+  scroll-behavior: smooth
 }
 
 .smart-scroll
@@ -34,15 +42,27 @@ body
 }
 .scrolled-down
 {
-   transform:translateY(-100%); transition: all 0.2s ease-in-out !important;
+   background-color: rgba(253, 180, 73,1) !important;
 }
+
 .scrolled-up
 {
-   transform:translateY(0); transition: all 0.3s ease-in-out !important;
+   background-color: rgba(253, 180, 73,0.8) !important;
 }
+@media only screen and (max-width: 992px) {
+  .nav-item
+  {
+    border-style: solid;
+    background-color: rgba(0,0,0,0.1);
+    padding-bottom: 8px;
+    border-bottom: 8px;
+    border-color: #FDB449;
+  }
+}
+
 .navbar
 {
-  transition: background-color 0.1s linear;
+  transition: background-color 0.2s linear;
   background-color: #FDB449;
   padding: 10px !important;
   padding-left: 64px !important;
@@ -134,9 +154,33 @@ body
 .grid-container
 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 48px;
   grid-auto-rows: minmax(100px, auto);
+}
+.card
+{
+  margin: auto;
+  float: none;
+  border: none;
+  border-radius: 10px;
+  grid-row: span 1;
+  grid-column: span 1;
+  width: 100% !important;
+  min-height: 184px !important;
+  max-width: 400px !important;
+}
+
+@media only screen and (max-width: 1680px)
+{
+  .grid-container
+  {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card
+  {
+    max-width: 300px !important;
+  }
 }
 @media only screen and (max-width: 1340px)
 {
@@ -160,18 +204,6 @@ body
   }
 }
 
-.card
-{
-  margin: 16px auto;
-  float: none;
-  border: none;
-  border-radius: 10px;
-  grid-row: span 1;
-  grid-column: span 1;
-  width: 100% !important;
-  min-height: 184px !important;
-  max-width: 300px !important;
-}
 .card-title
 {
   font-weight: 500;
@@ -186,6 +218,7 @@ body
   font-family: 'Fredoka One', sans-serif;
   letter-spacing: 0.5px;
   outline:none;
+  color: #fff !important;
 }
 .btn:hover
 {
@@ -216,6 +249,7 @@ body
   font-size:48px;
   text-decoration: none;
   color: #fff;
+  text-rendering: optimizeLegibility;
 }
 
 .social-icon:hover
@@ -228,4 +262,87 @@ body
 {
   text-decoration: none;
   color: #e3e3e3;
+}
+
+.link:link {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+}
+.link:visited {
+  color: #fff;
+  background-color: transparent;
+  text-decoration: none;
+}
+.link:hover {
+  color: #e3e3e3;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.link:active {
+  color: #e3e3e3;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/*Resepti popup*/
+.hide
+{
+  display:none;
+}
+
+.popup-container
+{
+  background-color: rgba(0, 0, 0,0.4);
+  z-index: 100;
+  position:fixed;
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  overflow:auto;
+  padding: 64px 0px 64px 0px;
+  overflow: auto;
+}
+
+.resepti-container
+{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  width: 90%;
+  max-width: 1600px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 64px;
+}
+
+.close-button
+{
+  outline: none;
+  border: 0;
+  color: black;
+  background-color: transparent;
+  font-size: 32px;
+
+  float: right;
+  position:relative;
+  top: -60px;
+  right: -48px;
+}
+
+@media only screen and (max-width: 600px)
+{
+  .resepti-container
+  {
+    padding: 16px 32px 16px 32px;
+  }
+  .close-button
+  {
+    top: -12px;
+    right: -12px;
+  }
 }
